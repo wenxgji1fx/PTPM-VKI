@@ -1,0 +1,36 @@
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+test_blacklisted_login (test_registration_validator.RegistrationValidatorTests.test_blacklisted_login) ... ok
+test_different_passwords_have_different_masks (test_registration_validator.RegistrationValidatorTests.test_different_passwords_have_different_masks) ... ok
+test_empty_login (test_registration_validator.RegistrationValidatorTests.test_empty_login) ... ok
+test_empty_password (test_registration_validator.RegistrationValidatorTests.test_empty_password) ... ok
+test_invalid_email (test_registration_validator.RegistrationValidatorTests.test_invalid_email) ... ok
+test_invalid_phone (test_registration_validator.RegistrationValidatorTests.test_invalid_phone) ... ok
+test_invalid_username_characters (test_registration_validator.RegistrationValidatorTests.test_invalid_username_characters) ... ok
+test_latin_letters_are_forbidden (test_registration_validator.RegistrationValidatorTests.test_latin_letters_are_forbidden) ... ok
+test_mask_does_not_contain_original_password (test_registration_validator.RegistrationValidatorTests.test_mask_does_not_contain_original_password) ... ok
+test_mask_is_deterministic (test_registration_validator.RegistrationValidatorTests.test_mask_is_deterministic) ... ok
+test_password_confirmation_must_match (test_registration_validator.RegistrationValidatorTests.test_password_confirmation_must_match) ... ok
+test_password_rejects_space (test_registration_validator.RegistrationValidatorTests.test_password_rejects_space) ... ok
+test_password_requires_digit (test_registration_validator.RegistrationValidatorTests.test_password_requires_digit) ... ok
+test_password_requires_lowercase (test_registration_validator.RegistrationValidatorTests.test_password_requires_lowercase) ... ok
+test_password_requires_special_character (test_registration_validator.RegistrationValidatorTests.test_password_requires_special_character) ... ok
+test_password_requires_uppercase (test_registration_validator.RegistrationValidatorTests.test_password_requires_uppercase) ... ok
+test_short_password (test_registration_validator.RegistrationValidatorTests.test_short_password) ... ok
+test_short_username (test_registration_validator.RegistrationValidatorTests.test_short_username) ... ok
+test_valid_email_login (test_registration_validator.RegistrationValidatorTests.test_valid_email_login) ... ok
+test_valid_phone_login (test_registration_validator.RegistrationValidatorTests.test_valid_phone_login) ... ok
+test_valid_string_login (test_registration_validator.RegistrationValidatorTests.test_valid_string_login) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.001s
+
+OK
