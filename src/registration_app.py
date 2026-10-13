@@ -92,3 +92,21 @@ class Controller:
         message = "Регистрация успешна" if result else error
         self.external_service.send(message)
         return message
+
+
+def main(database_path="registrations.db"):
+    database = RegistrationDatabase(database_path)
+    try:
+        controller = Controller(
+            ConsoleUserInterface(),
+            database,
+            RegistrationValidator(),
+            SimulatedExternalService(),
+        )
+        return controller.run()
+    finally:
+        database.close()
+
+
+if __name__ == "__main__":
+    print(main())

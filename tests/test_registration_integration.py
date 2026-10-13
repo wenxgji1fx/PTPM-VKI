@@ -1,9 +1,11 @@
 import unittest
+from tempfile import TemporaryDirectory
 from unittest.mock import Mock, patch
 
 from src.registration_app import (
     ConsoleUserInterface,
     Controller,
+    main,
     RegistrationDatabase,
     RegistrationValidator,
     SimulatedExternalService,
@@ -89,6 +91,16 @@ class RegistrationIntegrationTests(unittest.TestCase):
 
     def test_simulated_service(self):
         self.assertTrue(SimulatedExternalService().send("Регистрация успешна"))
+
+    def test_main_runs_registration_flow(self):
+        with TemporaryDirectory() as directory:
+            with patch(
+                "builtins.input",
+                side_effect=["student_1", "Пароль1!", "Пароль1!"],
+            ):
+                result = main(f"{directory}/registrations.db")
+
+        self.assertEqual(result, "Регистрация успешна")
 
 
 if __name__ == "__main__":
